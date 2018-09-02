@@ -16,6 +16,7 @@
 
 package org.optaplanner.examples.cloudbalancing.app;
 
+import java.util.logging.Logger;
 import org.optaplanner.core.api.solver.Solver;
 import org.optaplanner.core.api.solver.SolverFactory;
 import org.optaplanner.examples.cloudbalancing.domain.CloudBalance;
@@ -25,6 +26,9 @@ import org.optaplanner.examples.cloudbalancing.persistence.CloudBalancingGenerat
 
 public class CloudBalancingHelloWorld {
 
+    private static final Logger logger = Logger.getLogger(CloudBalancingHelloWorld.class.getName());
+    
+    
     public static void main(String[] args) {
         // Build the Solver
         SolverFactory<CloudBalance> solverFactory = SolverFactory.createFromXmlResource(
@@ -32,13 +36,13 @@ public class CloudBalancingHelloWorld {
         Solver<CloudBalance> solver = solverFactory.buildSolver();
 
         // Load a problem with 400 computers and 1200 processes
-        CloudBalance unsolvedCloudBalance = new CloudBalancingGenerator().createCloudBalance(400, 1200);
-
+        CloudBalance unsolvedCloudBalance = new CloudBalancingGenerator().createCloudBalance(2, 6);
+        logger.info("Example generated. Proceeding to solution: "+unsolvedCloudBalance.getComputerList().size() );
         // Solve the problem
         CloudBalance solvedCloudBalance = solver.solve(unsolvedCloudBalance);
 
         // Display the result
-        System.out.println("\nSolved cloudBalance with 400 computers and 1200 processes:\n"
+        System.out.println("\nSolved problem:\n"
                 + toDisplayString(solvedCloudBalance));
     }
 

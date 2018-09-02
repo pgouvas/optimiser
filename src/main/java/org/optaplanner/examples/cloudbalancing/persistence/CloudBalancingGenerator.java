@@ -91,8 +91,8 @@ public class CloudBalancingGenerator extends LoggingMain {
     public static void main(String[] args) {
         CloudBalancingGenerator generator = new CloudBalancingGenerator();
         generator.writeCloudBalance(2, 6);
-        generator.writeCloudBalance(3, 9);
-        generator.writeCloudBalance(4, 12);
+//        generator.writeCloudBalance(3, 9);
+//        generator.writeCloudBalance(4, 12);
 //        generator.writeCloudBalance(5, 15);
 //        generator.writeCloudBalance(6, 18);
 //        generator.writeCloudBalance(7, 21);
@@ -109,21 +109,21 @@ public class CloudBalancingGenerator extends LoggingMain {
 //        generator.writeCloudBalance(18, 54);
 //        generator.writeCloudBalance(19, 57);
 //        generator.writeCloudBalance(20, 60);
-        generator.writeCloudBalance(100, 300);
-        generator.writeCloudBalance(200, 600);
-        generator.writeCloudBalance(400, 1200);
-        generator.writeCloudBalance(800, 2400);
-        generator.writeCloudBalance(1600, 4800);
+//        generator.writeCloudBalance(100, 300);
+//        generator.writeCloudBalance(200, 600);
+//        generator.writeCloudBalance(400, 1200);
+//        generator.writeCloudBalance(800, 2400);
+//        generator.writeCloudBalance(1600, 4800);
     }
 
     protected final SolutionFileIO<CloudBalance> solutionFileIO;
-    protected File outputDir = new File("~/test");    //pgouvas
+    protected File outputDir = new File("/home/ubuntu");    //pgouvas
 
     protected Random random;
 
     public CloudBalancingGenerator() {
         solutionFileIO = new XStreamSolutionFileIO<>(CloudBalance.class);
-//        outputDir = new File(CommonApp.determineDataDir(CloudBalancingApp.DATA_DIR_NAME), "unsolved");    //pgouvas
+        outputDir = new File("/home/ubuntu", "unsolved");    //pgouvas
     }
 
     public CloudBalancingGenerator(boolean withoutDao) {
