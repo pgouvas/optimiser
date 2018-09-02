@@ -17,26 +17,19 @@
             <groupId>org.optaplanner</groupId>
             <artifactId>optaplanner-core</artifactId>
             <version>7.10.0.Final</version>
-        </dependency>    
-
+        </dependency>                        
         <dependency>
             <groupId>org.optaplanner</groupId>
-            <artifactId>optaplanner-solver</artifactId>
-            <version>7.10.0.Final</version>
-        </dependency>            
-                        
+            <artifactId>optaplanner-persistence-common</artifactId>
+            <version>7.10.0.Final</version>            
+        </dependency>        
         <dependency>
             <groupId>org.optaplanner</groupId>
-            <artifactId>optaplanner-persistence</artifactId>
-            <version>7.10.0.Final</version>
-            
-        </dependency>
-        <dependency>
-            <groupId>eu.arcadia</groupId>
-            <artifactId>optaplanner-solver</artifactId>
-            <version>0.1.5</version>
-            <type>jar</type>
-        </dependency>
+            <artifactId>optaplanner-persistence-xstream</artifactId>
+            <version>7.10.0.Final</version>            
+        </dependency>        
+        
+               
     </dependencies>   
             
 </project>

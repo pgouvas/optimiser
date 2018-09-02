@@ -21,12 +21,9 @@ import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-
-import org.optaplanner.examples.cloudbalancing.app.CloudBalancingApp;
 import org.optaplanner.examples.cloudbalancing.domain.CloudBalance;
 import org.optaplanner.examples.cloudbalancing.domain.CloudComputer;
 import org.optaplanner.examples.cloudbalancing.domain.CloudProcess;
-import org.optaplanner.examples.common.app.CommonApp;
 import org.optaplanner.examples.common.app.LoggingMain;
 import org.optaplanner.examples.common.persistence.AbstractSolutionImporter;
 import org.optaplanner.persistence.common.api.domain.solution.SolutionFileIO;
@@ -120,13 +117,13 @@ public class CloudBalancingGenerator extends LoggingMain {
     }
 
     protected final SolutionFileIO<CloudBalance> solutionFileIO;
-    protected final File outputDir;
+    protected File outputDir = new File("~/test");    //pgouvas
 
     protected Random random;
 
     public CloudBalancingGenerator() {
         solutionFileIO = new XStreamSolutionFileIO<>(CloudBalance.class);
-        outputDir = new File(CommonApp.determineDataDir(CloudBalancingApp.DATA_DIR_NAME), "unsolved");
+//        outputDir = new File(CommonApp.determineDataDir(CloudBalancingApp.DATA_DIR_NAME), "unsolved");    //pgouvas
     }
 
     public CloudBalancingGenerator(boolean withoutDao) {

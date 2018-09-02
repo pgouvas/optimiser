@@ -18,10 +18,9 @@ package org.optaplanner.examples.cloudbalancing.domain;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import org.optaplanner.examples.common.domain.AbstractPersistable;
-import org.optaplanner.examples.common.swingui.components.Labeled;
 
 @XStreamAlias("CloudComputer")
-public class CloudComputer extends AbstractPersistable implements Labeled {
+public class CloudComputer extends AbstractPersistable  {
 
     private int cpuPower; // in gigahertz
     private int memory; // in gigabyte RAM
@@ -79,7 +78,7 @@ public class CloudComputer extends AbstractPersistable implements Labeled {
         return cpuPower * memory * networkBandwidth;
     }
 
-    @Override
+//    @Override   
     public String getLabel() {
         return "Computer " + id;
     }
